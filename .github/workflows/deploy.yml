@@ -1,0 +1,22 @@
+name: Enterprise AI DevOps CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Display Project Files
+        run: |
+          echo "Enterprise AI DevOps Platform"
+          ls -la
+
+      - name: Success Message
+        run: echo "CI Pipeline Executed Successfully!"
