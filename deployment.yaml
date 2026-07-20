@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enterprise-ai-devops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enterprise-ai-devops
+  template:
+    metadata:
+      labels:
+        app: enterprise-ai-devops
+    spec:
+      containers:
+      - name: enterprise-ai-devops
+        image: haridoc2026/enterprise-ai-devops-platform:latest
+        ports:
+        - containerPort: 8080
