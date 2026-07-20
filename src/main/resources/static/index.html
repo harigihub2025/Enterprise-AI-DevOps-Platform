@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Enterprise AI DevOps Platform</title>
+
+    <meta name="description"
+        content="Enterprise AI DevOps Platform using Spring Boot, MySQL, AWS, Docker, Kubernetes, Jenkins and Terraform">
+
+    <meta name="keywords"
+        content="Spring Boot, DevOps, AWS, Docker, Kubernetes, Jenkins, Terraform, AI">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- =============================
+            LOADER
+============================== -->
+
+<div id="loader">
+
+    <div class="spinner"></div>
+
+    <h2>Loading Enterprise AI DevOps Platform...</h2>
+
+</div>
+
+<!-- =============================
+            HEADER
+============================== -->
+
+<header>
+
+    <div class="logo">
+
+        <h1 id="projectName">
+            Enterprise AI DevOps Platform
+        </h1>
+
+        <p id="projectDescription">
+            AI Powered Infrastructure Automation
+        </p>
+
+    </div>
+
+    <nav>
+
+        <a href="#about">About</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#addProject">Projects</a>
+
+        <a href="#pipeline">Pipeline</a>
+
+        <a href="#dashboard">Dashboard</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+</header>
+
+<!-- =============================
+            HERO
+============================== -->
+
+<section class="hero">
+
+    <h2 id="heroTitle">
+
+        Cloud • DevOps • AI Automation
+
+    </h2>
+
+    <p id="projectTechnology">
+
+        Terraform |
+        AWS |
+        Docker |
+        Kubernetes |
+        Jenkins
+
+    </p>
+
+    <button id="exploreBtn">
+
+        Explore Project
+
+    </button>
+
+</section>
+
+<!-- =============================
+          PROJECT FORM
+============================== -->
+
+<section id="addProject">
+
+    <div class="container">
+
+        <h2>
+
+            Project Management
+
+        </h2>
+
+        <form id="projectForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Project Name"
+                required>
+
+            <textarea
+                id="description"
+                placeholder="Project Description"
+                required>
+            </textarea>
+
+            <input
+                type="text"
+                id="technology"
+                placeholder="Technology Stack"
+                required>
+
+            <button type="submit">
+
+                Save Project
+
+            </button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </div>
+
+</section>
+
+<!-- =============================
+        PROJECT LIST
+============================== -->
+
+<section id="projectList">
+
+    <div class="container">
+
+        <h2>
+
+            Project List
+
+        </h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Project..."
+            class="form-control mb-4">
+
+        <div class="table-responsive">
+
+            <table
+                id="projectTable"
+                class="table table-dark table-hover align-middle">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+
+                        <th>Description</th>
+
+                        <th>Technology</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="projectBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="pagination">
+
+            <button onclick="changePage(1)">
+                1
+            </button>
+
+            <button onclick="changePage(2)">
+                2
+            </button>
+
+            <button onclick="changePage(3)">
+                3
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =============================
+            ABOUT
+============================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <h2>About Enterprise AI DevOps Platform</h2>
+
+        <p class="about-text">
+
+            Enterprise AI DevOps Platform is a modern cloud automation
+            application developed using Spring Boot and MySQL.
+
+            It demonstrates enterprise application development,
+            REST API integration, Infrastructure as Code,
+            Continuous Integration & Continuous Deployment,
+            Containerization and Cloud deployment.
+
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>🎯 Project Goal</h3>
+
+                <p>
+
+                    Build an enterprise-ready DevOps platform
+                    capable of managing projects using
+                    modern cloud technologies.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>⚡ Key Features</h3>
+
+                <p>
+
+                    CRUD Operations,
+                    REST API,
+                    Validation,
+                    Exception Handling,
+                    Search,
+                    Responsive UI.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>☁ Cloud Ready</h3>
+
+                <p>
+
+                    Designed for AWS deployment with
+                    Docker, Kubernetes,
+                    Jenkins and Terraform.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =============================
+            SERVICES
+============================== -->
+
+<section id="services">
+
+    <div class="container">
+
+        <h2>Enterprise Services</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <img src="icons/aws.png" alt="AWS">
+
+                <h3>AWS Cloud</h3>
+
+                <p>
+
+                    Secure cloud infrastructure,
+                    scalable deployment
+                    and enterprise hosting.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <img src="icons/docker.svg" alt="Docker">
+
+                <h3>Docker</h3>
+
+                <p>
+
+                    Package applications into
+                    lightweight containers
+                    for consistent deployment.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <img src="icons/kubernetes.svg" alt="Kubernetes">
+
+                <h3>Kubernetes</h3>
+
+                <p>
+
+                    Container orchestration,
+                    scaling and
+                    self-healing workloads.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <img src="icons/jenkins.svg" alt="Jenkins">
+
+                <h3>Jenkins</h3>
+
+                <p>
+
+                    Continuous Integration,
+                    automated testing
+                    and deployment pipeline.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <img src="icons/git.svg" alt="Git">
+
+                <h3>Git</h3>
+
+                <p>
+
+                    Distributed version control
+                    for collaborative
+                    software development.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <img src="icons/terraform.png" alt="Terraform">
+
+                <h3>Terraform</h3>
+
+                <p>
+
+                    Infrastructure as Code
+                    for automated provisioning
+                    across cloud platforms.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <img src="icons/ansible.png" alt="Ansible">
+
+                <h3>Ansible</h3>
+
+                <p>
+
+                    Automated configuration
+                    management and
+                    server provisioning.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <img src="icons/python ai.png" alt="Python AI">
+
+                <h3>Python AI</h3>
+
+                <p>
+
+                    AI-powered automation,
+                    scripting and intelligent
+                    infrastructure management.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =============================
+            STATS
+============================== -->
+
+<section class="stats">
+
+    <div class="stat-box">
+
+        <h1>100%</h1>
+
+        <p>Automation</p>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h1>99.9%</h1>
+
+        <p>Availability</p>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h1>15+</h1>
+
+        <p>Technologies</p>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h1>24x7</h1>
+
+        <p>Monitoring</p>
+
+    </div>
+
+</section>
+
+<!-- =============================
+            PIPELINE
+============================== -->
+
+<section id="pipeline">
+
+    <div class="container">
+
+        <h2>Enterprise DevOps Pipeline</h2>
+
+        <div class="pipeline-flow">
+
+            <div class="pipeline-item">Developer</div>
+
+            <div class="arrow">➜</div>
+
+            <div class="pipeline-item">GitHub</div>
+
+            <div class="arrow">➜</div>
+
+            <div class="pipeline-item">Jenkins</div>
+
+            <div class="arrow">➜</div>
+
+            <div class="pipeline-item">Docker</div>
+
+            <div class="arrow">➜</div>
+
+            <div class="pipeline-item">Kubernetes</div>
+
+            <div class="arrow">➜</div>
+
+            <div class="pipeline-item">AWS</div>
+
+            <div class="arrow">➜</div>
+
+            <div class="pipeline-item">Nginx</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =============================
+        DASHBOARD
+============================== -->
+
+<section id="dashboard">
+
+    <div class="container">
+
+        <h2>Enterprise Dashboard</h2>
+
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card">
+
+                <h3>AWS Cloud</h3>
+
+                <h1>🟢 Online</h1>
+
+                <p>Infrastructure is running successfully.</p>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h3>Spring Boot</h3>
+
+                <h1>🟢 Running</h1>
+
+                <p>REST API is connected with MySQL.</p>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h3>Terraform</h3>
+
+                <h1>🟢 Success</h1>
+
+                <p>Infrastructure provisioning completed.</p>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h3>Docker</h3>
+
+                <h1>🟡 Pending</h1>
+
+                <p>Containerization will be enabled in Phase 3.</p>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h3>Kubernetes</h3>
+
+                <h1>🟡 Pending</h1>
+
+                <p>Cluster deployment will be added later.</p>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h3>Jenkins</h3>
+
+                <h1>🟡 Pending</h1>
+
+                <p>CI/CD Pipeline integration coming soon.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =============================
+        TECHNOLOGY STACK
+============================== -->
+
+<section class="skills">
+
+    <div class="container">
+
+        <h2>Technology Stack</h2>
+
+        <div class="skill">
+
+            <p>AWS Cloud</p>
+
+            <div class="progress">
+
+                <div class="progress-bar aws">95%</div>
+
+            </div>
+
+        </div>
+
+        <div class="skill">
+
+            <p>Terraform</p>
+
+            <div class="progress">
+
+                <div class="progress-bar terraform">95%</div>
+
+            </div>
+
+        </div>
+
+        <div class="skill">
+
+            <p>Docker</p>
+
+            <div class="progress">
+
+                <div class="progress-bar docker">90%</div>
+
+            </div>
+
+        </div>
+
+        <div class="skill">
+
+            <p>Kubernetes</p>
+
+            <div class="progress">
+
+                <div class="progress-bar kubernetes">88%</div>
+
+            </div>
+
+        </div>
+
+        <div class="skill">
+
+            <p>Jenkins</p>
+
+            <div class="progress">
+
+                <div class="progress-bar jenkins">92%</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =============================
+        PROJECT TIMELINE
+============================== -->
+
+<section class="timeline">
+
+    <div class="container">
+
+        <h2>Project Timeline</h2>
+
+        <div class="timeline-container">
+
+            <div class="timeline-box">
+
+                <h3>Phase 1</h3>
+
+                <p>Spring Boot + MySQL Setup</p>
+
+            </div>
+
+            <div class="timeline-box">
+
+                <h3>Phase 2</h3>
+
+                <p>REST API & CRUD Operations</p>
+
+            </div>
+
+            <div class="timeline-box">
+
+                <h3>Phase 3</h3>
+
+                <p>Frontend Integration & Validation</p>
+
+            </div>
+
+            <div class="timeline-box">
+
+                <h3>Phase 4</h3>
+
+                <p>Docker Containerization</p>
+
+            </div>
+
+            <div class="timeline-box">
+
+                <h3>Phase 5</h3>
+
+                <p>Jenkins CI/CD Pipeline</p>
+
+            </div>
+
+            <div class="timeline-box">
+
+                <h3>Phase 6</h3>
+
+                <p>Kubernetes Deployment</p>
+
+            </div>
+
+            <div class="timeline-box">
+
+                <h3>Phase 7</h3>
+
+                <p>AWS Cloud Production Deployment</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =============================
+            CONTACT
+============================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <h2>Created By</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>👨‍💻 Hariharan</h3>
+
+                <p>
+                    Full Stack Java Developer &
+                    DevOps Engineer
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>☁ Cloud Technologies</h3>
+
+                <p>
+                    AWS • Spring Boot • MySQL •
+                    Terraform • Docker • Kubernetes
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>🚀 Enterprise Project</h3>
+
+                <p>
+                    Git • GitHub • Jenkins •
+                    CI/CD • Infrastructure Automation
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =============================
+            FOOTER
+============================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h2>Enterprise AI DevOps Platform</h2>
+
+            <p>
+
+                Enterprise level DevOps project developed
+                using Spring Boot, MySQL, AWS,
+                Docker, Kubernetes, Terraform,
+                Jenkins, GitHub and Ansible.
+
+            </p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Technology Stack</h3>
+
+            <ul>
+
+                <li>Spring Boot</li>
+
+                <li>MySQL</li>
+
+                <li>AWS Cloud</li>
+
+                <li>Docker</li>
+
+                <li>Kubernetes</li>
+
+                <li>Terraform</li>
+
+                <li>Jenkins</li>
+
+                <li>GitHub</li>
+
+            </ul>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Project Status</h3>
+
+            <p>🟢 Spring Boot API Running</p>
+
+            <p>🟢 MySQL Connected</p>
+
+            <p>🟢 CRUD Operations Working</p>
+
+            <p>🟢 Validation Completed</p>
+
+            <p>🟢 Exception Handling Ready</p>
+
+            <p>🟡 Docker Integration (Next Phase)</p>
+
+            <p>🟡 Kubernetes Deployment (Next Phase)</p>
+
+            <p>🟡 Jenkins CI/CD (Next Phase)</p>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="copyright">
+
+        <p>
+
+            © 2026 Enterprise AI DevOps Platform
+
+        </p>
+
+        <p>
+
+            Designed & Developed by Hariharan
+
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- =============================
+            JAVASCRIPT
+============================== -->
+
+<script src="script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

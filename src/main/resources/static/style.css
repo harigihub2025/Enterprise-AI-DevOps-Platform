@@ -1,0 +1,1316 @@
+/* ==========================================
+   Enterprise AI DevOps Platform
+   Premium Enterprise UI
+========================================== */
+
+:root{
+
+    --primary:#00e5ff;
+    --secondary:#0099cc;
+    --dark:#0d1117;
+    --card:#161b22;
+    --card2:#1f2937;
+    --white:#ffffff;
+    --text:#d1d5db;
+    --success:#22c55e;
+    --warning:#facc15;
+    --danger:#ef4444;
+    --shadow:0 10px 25px rgba(0,0,0,.30);
+    --radius:18px;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+
+}
+
+html{
+
+    overflow-x:hidden;
+
+}
+
+body{
+
+    background:linear-gradient(135deg,#020617,#0f172a,#111827);
+    color:var(--white);
+    line-height:1.6;
+    overflow-x:hidden;
+
+}
+
+/* ===========================
+        Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#00bcd4;
+
+}
+
+/* ===========================
+        Loader
+=========================== */
+
+#loader{
+
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:999999;
+
+}
+
+.spinner{
+
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    border:8px solid #2d3748;
+    border-top:8px solid var(--primary);
+    animation:spin 1s linear infinite;
+    margin-bottom:25px;
+
+}
+
+@keyframes spin{
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ===========================
+        Header
+=========================== */
+
+header{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:85px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 8%;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(15px);
+
+    z-index:999;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo h1{
+
+    color:var(--primary);
+    font-size:30px;
+    font-weight:700;
+
+}
+
+.logo p{
+
+    color:#b8c1cc;
+    font-size:14px;
+
+}
+
+nav{
+
+    display:flex;
+    gap:30px;
+
+}
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.35s;
+
+}
+
+nav a:hover{
+
+    color:var(--primary);
+
+}
+
+/* ===========================
+        Hero
+=========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:120px 30px 50px;
+
+    background:
+
+    radial-gradient(circle at top,
+    rgba(0,229,255,.18),
+    transparent 45%),
+
+    linear-gradient(135deg,
+    #020617,
+    #111827,
+    #1e293b);
+
+}
+
+.hero h2{
+
+    font-size:58px;
+    font-weight:700;
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    color:#d1d5db;
+
+    font-size:22px;
+
+    margin-bottom:35px;
+
+    max-width:850px;
+
+}
+
+.hero button{
+
+    background:var(--primary);
+
+    color:#000;
+
+    padding:15px 45px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.hero button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 25px rgba(0,229,255,.55);
+
+}
+
+/* ===========================
+        Section
+=========================== */
+
+section{
+
+    padding:90px 8%;
+
+}
+
+section h2{
+
+    font-size:40px;
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+    color:var(--primary);
+
+}
+
+/* ===========================
+        Form
+=========================== */
+
+#projectForm{
+
+    max-width:700px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+#projectForm input,
+#projectForm textarea{
+
+    background:var(--card);
+
+    color:white;
+
+    border:1px solid #30363d;
+
+    border-radius:12px;
+
+    padding:16px;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+#projectForm textarea{
+
+    min-height:160px;
+
+    resize:vertical;
+
+}
+
+#projectForm input:focus,
+#projectForm textarea:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 12px rgba(0,229,255,.35);
+
+}
+
+#projectForm button{
+
+    background:var(--primary);
+
+    color:#000;
+
+    font-weight:700;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    transition:.35s;
+
+}
+
+#projectForm button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 20px rgba(0,229,255,.45);
+
+}
+
+#message{
+
+    text-align:center;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    margin-top:20px;
+
+}
+
+/* ===========================
+        About
+=========================== */
+
+#about{
+
+    text-align:center;
+
+}
+
+#about .about-text{
+
+    max-width:950px;
+
+    margin:0 auto 45px;
+
+    color:var(--text);
+
+    font-size:18px;
+
+    line-height:32px;
+
+}
+
+/* ===========================
+        Cards
+=========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+
+    gap:30px;
+
+    margin-top:35px;
+
+}
+
+.card{
+
+    background:linear-gradient(145deg,#161b22,#1f2937);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:var(--radius);
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 30px rgba(0,229,255,.25);
+
+}
+
+.card img{
+
+    width:75px;
+
+    height:75px;
+
+    object-fit:contain;
+
+    margin-bottom:22px;
+
+}
+
+.card h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.card p{
+
+    color:var(--text);
+
+    line-height:28px;
+
+}
+
+/* ===========================
+        Stats
+=========================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:30px;
+
+}
+
+.stat-box{
+
+    background:linear-gradient(145deg,#161b22,#1f2937);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 0 22px rgba(0,229,255,.30);
+
+}
+
+.stat-box h1{
+
+    font-size:50px;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+    color:var(--text);
+
+    font-size:17px;
+
+}
+
+/* ===========================
+        Pipeline
+=========================== */
+
+.pipeline-flow{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.pipeline-item{
+
+    background:var(--card);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:18px 30px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.pipeline-item:hover{
+
+    background:var(--primary);
+
+    color:#000;
+
+    transform:translateY(-5px);
+
+}
+
+.arrow{
+
+    color:var(--primary);
+
+    font-size:30px;
+
+    font-weight:bold;
+
+}
+
+/* ===========================
+        Dashboard
+=========================== */
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+
+    gap:30px;
+
+}
+
+.dashboard-card{
+
+    background:linear-gradient(145deg,#161b22,#1f2937);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 25px rgba(0,229,255,.30);
+
+}
+
+.dashboard-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+}
+
+.dashboard-card h1{
+
+    font-size:32px;
+
+    margin-bottom:15px;
+
+}
+
+.dashboard-card p{
+
+    color:var(--text);
+
+}
+
+/* ===========================
+        Project Table
+=========================== */
+
+#projectTable{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:30px;
+
+    overflow:hidden;
+
+    border-radius:15px;
+
+}
+
+#projectTable thead{
+
+    background:var(--primary);
+
+}
+
+#projectTable th{
+
+    color:#000;
+
+    font-size:17px;
+
+    padding:16px;
+
+    text-align:center;
+
+}
+
+#projectTable td{
+
+    background:#161b22;
+
+    color:#fff;
+
+    padding:16px;
+
+    text-align:center;
+
+    border-bottom:1px solid #2d3748;
+
+}
+
+#projectTable tbody tr{
+
+    transition:.25s;
+
+}
+
+#projectTable tbody tr:hover{
+
+    background:#1f2937;
+
+}
+
+/* ===========================
+        Search
+=========================== */
+
+#searchInput{
+
+    margin-bottom:25px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    border:1px solid #30363d;
+
+    background:#161b22;
+
+    color:white;
+
+}
+
+#searchInput:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 12px rgba(0,229,255,.30);
+
+}
+
+/* ===========================
+        Buttons
+=========================== */
+
+table button{
+
+    padding:8px 16px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    margin:2px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.30s;
+
+}
+
+table button:first-child{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+table button:first-child:hover{
+
+    background:#1d4ed8;
+
+}
+
+table button:last-child{
+
+    background:#dc2626;
+
+    color:white;
+
+}
+
+table button:last-child:hover{
+
+    background:#b91c1c;
+
+}
+
+/* ===========================
+        Pagination
+=========================== */
+
+.pagination{
+
+    margin-top:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+.pagination button{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:var(--primary);
+
+    color:#000;
+
+    font-weight:700;
+
+    transition:.30s;
+
+}
+
+.pagination button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 15px rgba(0,229,255,.35);
+
+}
+
+/* ===========================
+        Skills
+=========================== */
+
+.skills{
+
+    background:#111827;
+
+}
+
+.skill{
+
+    margin-bottom:28px;
+
+}
+
+.skill p{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:22px;
+
+    background:#2d3748;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    text-align:right;
+
+    padding-right:10px;
+
+    line-height:22px;
+
+    animation:progressLoad 2s ease;
+
+}
+
+.aws{
+
+    width:95%;
+
+    background:#ff9900;
+
+}
+
+.terraform{
+
+    width:95%;
+
+    background:#7B42BC;
+
+}
+
+.docker{
+
+    width:90%;
+
+    background:#2496ED;
+
+}
+
+.kubernetes{
+
+    width:88%;
+
+    background:#326CE5;
+
+}
+
+.jenkins{
+
+    width:92%;
+
+    background:#D24939;
+
+}
+
+@keyframes progressLoad{
+
+    from{
+
+        width:0;
+
+    }
+
+}
+
+/* ===========================
+        Timeline
+=========================== */
+
+.timeline-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+.timeline-box{
+
+    background:linear-gradient(145deg,#161b22,#1f2937);
+
+    padding:30px;
+
+    border-left:5px solid var(--primary);
+
+    border-radius:18px;
+
+    transition:.35s;
+
+}
+
+.timeline-box:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 0 20px rgba(0,229,255,.30);
+
+}
+
+.timeline-box h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.timeline-box p{
+
+    color:var(--text);
+
+    line-height:28px;
+
+}
+
+/* ===========================
+        Footer
+=========================== */
+
+.footer{
+
+    background:#05070d;
+
+    padding:70px 8% 40px;
+
+    margin-top:50px;
+
+}
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:40px;
+
+}
+
+.footer-box h2,
+.footer-box h3{
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+}
+
+.footer-box p,
+.footer-box li{
+
+    color:var(--text);
+
+    line-height:28px;
+
+}
+
+.footer-box ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.footer hr{
+
+    margin:40px 0;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.copyright{
+
+    text-align:center;
+
+    color:#9ca3af;
+
+    font-size:15px;
+
+}
+
+/* ===========================
+        Theme Toggle
+=========================== */
+
+#themeToggle{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:var(--primary);
+
+    color:#000;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+}
+
+.dark{
+
+    background:#ffffff;
+
+    color:#111827;
+
+}
+
+.dark header{
+
+    background:rgba(255,255,255,.95);
+
+}
+
+.dark nav a{
+
+    color:#111827;
+
+}
+
+.dark .card,
+.dark .dashboard-card,
+.dark .timeline-box,
+.dark .stat-box{
+
+    background:#f8fafc;
+
+    color:#111827;
+
+}
+
+.dark .card p,
+.dark .timeline-box p,
+.dark .dashboard-card p,
+.dark .footer-box p,
+.dark .footer-box li{
+
+    color:#374151;
+
+}
+
+.dark .hero{
+
+    background:#f3f4f6;
+
+}
+
+.dark .hero h2{
+
+    color:#0284c7;
+
+}
+
+/* ===========================
+        Animations
+=========================== */
+
+section{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+::selection{
+
+    background:var(--primary);
+
+    color:#000;
+
+}
+
+/* ===========================
+        Responsive
+=========================== */
+
+@media(max-width:992px){
+
+    header{
+
+        padding:20px;
+
+        flex-direction:column;
+
+        height:auto;
+
+        gap:15px;
+
+    }
+
+    nav{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:15px;
+
+    }
+
+    .hero h2{
+
+        font-size:42px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    section{
+
+        padding:70px 20px;
+
+    }
+
+    .hero{
+
+        padding-top:140px;
+
+    }
+
+    .hero h2{
+
+        font-size:34px;
+
+    }
+
+    .hero p{
+
+        font-size:17px;
+
+    }
+
+    .pipeline-flow{
+
+        flex-direction:column;
+
+    }
+
+    .arrow{
+
+        transform:rotate(90deg);
+
+    }
+
+    #projectForm{
+
+        width:100%;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .logo h1{
+
+        font-size:22px;
+
+    }
+
+    section h2{
+
+        font-size:30px;
+
+    }
+
+    .dashboard-card h1{
+
+        font-size:26px;
+
+    }
+
+    .stat-box h1{
+
+        font-size:38px;
+
+    }
+
+}
+
+/* ===========================
+        END OF FILE
+=========================== */
