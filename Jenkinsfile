@@ -14,5 +14,11 @@ pipeline {
                 sh './mvnw clean package'
             }
         }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t enterprise-ai-devops-platform .'
+            }
+        }
     }
 }
