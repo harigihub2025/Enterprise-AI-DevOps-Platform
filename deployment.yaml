@@ -15,5 +15,6 @@ spec:
       containers:
       - name: enterprise-ai-devops
         image: haridoc2026/enterprise-ai-devops-platform:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080

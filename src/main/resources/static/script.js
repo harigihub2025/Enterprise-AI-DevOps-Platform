@@ -4,7 +4,7 @@
       Part 1
 ========================================== */
 
-const API_URL = "http://localhost:8080/api/project";
+const API_URL = "http://localhost:9091/api/project";
 
 let editId = null;
 
@@ -258,15 +258,25 @@ async function loadProjects() {
 
     try {
 
+        console.log("Loading from:", API_URL);
+
         const response = await fetch(API_URL);
+
+        console.log("GET Status:", response.status);
 
         if (!response.ok) {
 
-            throw new Error("Unable to fetch projects");
+            const error = await response.text();
+
+            console.log("GET Error:", error);
+
+            throw new Error(error);
 
         }
 
         projects = await response.json();
+
+        console.log("Projects:", projects);
 
         filteredProjects = [...projects];
 
@@ -276,9 +286,12 @@ async function loadProjects() {
 
     } catch (error) {
 
-        console.error(error);
+        console.error("LoadProjects Error:", error);
 
-        showMessage("❌ Failed to load projects", "red");
+        showMessage(
+            "❌ Failed to load projects\n" + error,
+            "red"
+        );
 
     }
 
@@ -365,54 +378,27 @@ function renderProjects() {
         Save Project
 ========================================== */
 
-const projectForm = document.getElementById("projectForm");
-
-if (projectForm) {
-
-    projectForm.addEventListener("submit", saveProject);
-
-}
-
 async function saveProject(event) {
 
     event.preventDefault();
 
     const project = {
 
-        name:
-            document
-            .getElementById("name")
-            .value
-            .trim(),
+        name: document.getElementById("name").value.trim(),
 
-        description:
-            document
-            .getElementById("description")
-            .value
-            .trim(),
+        description: document.getElementById("description").value.trim(),
 
-        technology:
-            document
-            .getElementById("technology")
-            .value
-            .trim()
+        technology: document.getElementById("technology").value.trim()
 
     };
 
     if (
-
         project.name === "" ||
-
         project.description === "" ||
-
         project.technology === ""
-
     ) {
 
-        showMessage(
-            "⚠ All fields are required.",
-            "orange"
-        );
+        showMessage("⚠ All fields are required.", "orange");
 
         return;
 
@@ -420,91 +406,60 @@ async function saveProject(event) {
 
     try {
 
+        console.log("API URL:", API_URL);
+        console.log("Project:", project);
+
         const response = await fetch(
-
-            editId === null
-
-                ? API_URL
-
-                : `${API_URL}/${editId}`,
-
+            editId === null ? API_URL : `${API_URL}/${editId}`,
             {
-
-                method:
-
-                    editId === null
-
-                        ? "POST"
-
-                        : "PUT",
-
+                method: editId === null ? "POST" : "PUT",
                 headers: {
-
-                    "Content-Type":
-
-                        "application/json"
-
+                    "Content-Type": "application/json"
                 },
-
                 body: JSON.stringify(project)
-
             }
-
         );
+
+        console.log("Response Status:", response.status);
 
         if (!response.ok) {
 
-            const error = await response.json();
+            const error = await response.text();
 
-            showMessage(
+            console.log("Server Error:", error);
 
-                JSON.stringify(error),
-
-                "red"
-
-            );
+            showMessage(error, "red");
 
             return;
 
         }
 
-        await response.json();
+       const result = await response.json();
 
-        showMessage(
+console.log(result);
 
-            editId === null
+showMessage(
+    editId === null
+        ? "✅ Project Added Successfully"
+        : "✅ Project Updated Successfully",
+    "lime"
+);
 
-                ? "✅ Project Added Successfully"
-
-                : "✅ Project Updated Successfully",
-
-            "lime"
-
-        );
+await loadProjects();
 
         editId = null;
 
         projectForm.reset();
 
-        projectForm
-            .querySelector("button")
-            .innerText = "Save Project";
+        projectForm.querySelector("button").innerText = "Save Project";
 
         loadProjects();
 
     } catch (error) {
-
-        console.error(error);
-
-        showMessage(
-
-            "❌ Server Connection Failed",
-
-            "red"
-
-        );
-
-    }
+    console.error(error);
+    alert(error.stack || error.message || error);
+    showMessage(error.toString(), "red");
+}
 
 }
 
