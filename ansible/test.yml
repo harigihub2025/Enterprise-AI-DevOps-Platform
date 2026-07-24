@@ -1,0 +1,8 @@
+---
+- hosts: local
+  gather_facts: no
+
+  tasks:
+    - name: Check Ansible
+      debug:
+        msg: "Enterprise AI DevOps Platform - Ansible Working Successfully"

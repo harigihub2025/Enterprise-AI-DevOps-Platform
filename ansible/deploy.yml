@@ -1,0 +1,24 @@
+---
+- name: Deploy Enterprise AI DevOps Platform
+  hosts: local
+  become: false
+
+  tasks:
+
+    - name: Show Current Directory
+      command: pwd
+
+    - name: Check Kubernetes Pods
+      command: kubectl get pods
+
+    - name: Apply Deployment
+      command: kubectl apply -f ../deployment.yaml
+
+    - name: Apply Service
+      command: kubectl apply -f ../service.yaml
+
+    - name: Verify Pods
+      command: kubectl get pods
+
+    - name: Verify Services
+      command: kubectl get svc
