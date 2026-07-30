@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        JAVA_HOME = '/usr/lib/jvm/java-21-openjdk-amd64'
+        PATH = '${JAVA_HOME}/bin:${PATH}'
+    }
+
     stages {
 
         stage('Checkout') {
@@ -33,5 +38,11 @@ pipeline {
             }
         }
 
+    }
+}
+
+stage('Deploy to Kubernetes') {
+    steps {
+        sh 'kubectl apply -f deployment.yaml'
     }
 }
