@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        JAVA_HOME = '/usr/lib/jvm/java-21-openjdk-amd64'
-        PATH = '${JAVA_HOME}/bin:${PATH}'
+        JAVA_HOME = "/usr/lib/jvm/java-21-openjdk-amd64"
+        PATH = "/usr/lib/jvm/java-21-openjdk-amd64/bin:/usr/local/bin:/usr/bin:/bin"
     }
 
     stages {
@@ -30,19 +30,18 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                     sh '''
-                        echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-                        docker tag enterprise-ai-devops-platform haridoc2026/enterprise-ai-devops-platform:latest
-                        docker push haridoc2026/enterprise-ai-devops-platform:latest
+                    echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+                    docker tag enterprise-ai-devops-platform haridoc2026/enterprise-ai-devops-platform:latest
+                    docker push haridoc2026/enterprise-ai-devops-platform:latest
                     '''
                 }
             }
         }
 
-    }
-}
-
-stage('Deploy to Kubernetes') {
-    steps {
-        sh 'kubectl apply -f deployment.yaml'
+        stage('Deploy to Kubernetes') {
+            steps {
+                sh 'kubectl apply -f deployment.yaml'
+            }
+        }
     }
 }
