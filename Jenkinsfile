@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        JAVA_HOME = "/usr/lib/jvm/java-21-openjdk-amd64"
-        PATH = "/usr/lib/jvm/java-21-openjdk-amd64/bin:/usr/local/bin:/usr/bin:/bin"
-    }
+    JAVA_HOME = "/opt/java/openjdk"
+    PATH = "/opt/java/openjdk/bin:/usr/local/bin:/usr/bin:/bin"
+}
 
     stages {
 
