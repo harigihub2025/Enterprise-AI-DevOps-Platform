@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 
-@RequestMapping("/api/project")
+@RequestMapping("/api/projects")
 
 @CrossOrigin(origins = "*")
 

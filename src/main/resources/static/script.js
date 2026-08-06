@@ -4,7 +4,7 @@
       Part 1
 ========================================== */
 
-const API_URL = "http://localhost:30080/api/project";
+const API_URL = "http://localhost:30080/api/projects";
 
 let editId = null;
 
